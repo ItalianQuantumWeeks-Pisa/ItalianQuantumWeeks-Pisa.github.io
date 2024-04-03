@@ -296,7 +296,22 @@ iframe#unpaywall[src$="unpaywall.html"] {
 }
 .oui-icon {
     font-family: 'Oui Icons' !important;
-}</style>
+}
+
+.img:hover{
+    color: #424242; 
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(2);
+  -ms-transform: scale(2); /* IE 9 */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+
+}
+</style>
 
 <link rel="https://api.w.org/" href="https://quantumweeks.it/wp-json/"><link rel="alternate" type="application/json" href="https://quantumweeks.it/wp-json/wp/v2/pages/4413"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://quantumweeks.it/xmlrpc.php?rsd">
 <meta name="generator" content="WordPress 6.5">
@@ -366,7 +381,7 @@ iframe#unpaywall[src$="unpaywall.html"] {
 
     
        <figure>
-    <img class="attachment-large size-large wp-image-2784" fetchpriority="high" decoding="async" src="map-large.png" ></figure>
+    <img class="attachment-large size-large wp-image-2784 img" fetchpriority="high" decoding="async" src="map-large.png" ></figure>
 
 
 </div>		
@@ -379,20 +394,7 @@ iframe#unpaywall[src$="unpaywall.html"] {
 					</div>
     
 
-                    <img id="image" src="" alt="" />
-                    <script>
-                      const thumbnailUrl = "map-large.png";
-                      const wideImageUrl = "map-large.png";
-                
-                      const image = document.getElementById("image");
-                      image.src = thumbnailUrl;
-                      let isThumbnail = true;
-                
-                      image.addEventListener("click", () => {
-                        image.src = isThumbnail ? wideImageUrl : thumbnailUrl;
-                        isThumbnail = !isThumbnail;
-                      });
-                    </script>
+
 
 		</section>
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-2744c18 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2744c18" data-element_type="section">
