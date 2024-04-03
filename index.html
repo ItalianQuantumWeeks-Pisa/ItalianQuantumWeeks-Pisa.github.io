@@ -298,7 +298,7 @@ iframe#unpaywall[src$="unpaywall.html"] {
     font-family: 'Oui Icons' !important;
 }
 
-.img:hover{
+.img-scale {
     color: #424242; 
   -webkit-transition: all .3s ease-in;
   -moz-transition: all .3s ease-in;
@@ -306,9 +306,12 @@ iframe#unpaywall[src$="unpaywall.html"] {
   -o-transition: all .3s ease-in;
   transition: all .3s ease-in;
   opacity: 1;
-  transform: scale(3);
-  -ms-transform: scale(3); /* IE 9 */
-  -webkit-transform: scale(3); /* Safari and Chrome */
+  transform: scale(2.5);
+  -ms-transform: scale(2.5); /* IE 9 */
+  -webkit-transform: scale(2.5); /* Safari and Chrome */
+    -o-transform: scale(2.5); /* Opera */
+    -moz-transform: scale(2.5); /* Firefox */
+
 
 }
 </style>
@@ -373,15 +376,28 @@ iframe#unpaywall[src$="unpaywall.html"] {
                         <a href="" class="elementor-image-box-link"><i><u>Meccanica Quantistica</i></u></a> </br>
                         <a href="" class="elementor-image-box-link"><i><u>L'Entanglement</i></u></a> </br>
                         <a href="" class="elementor-image-box-link"><i><u>Tecnologie Quantistiche</i></u></a> </br>
-                        <a href="" class="elementor-image-box-link"><i><u>Quantum Jungle</i></u></a>
+                        <a href="" class="elementor-image-box-link"><i><u>Quantum Jungle</i></u></a></br></br>
                     
+o clicca sulla mappa per ingrandirla!
+
                     </p>
                     
 </div>
 
     
        <figure>
-    <img class="attachment-large size-large wp-image-2784 img" fetchpriority="high" decoding="async" src="map-large.png" ></figure>
+    <img id="imgg" fetchpriority="high" decoding="async" src="map-large.png" ></figure>
+
+
+    <script>
+        document.getElementById("imgg").addEventListener("click", function() {
+            if (this.classList.contains("img-scale")) {
+                this.classList.remove("img-scale");
+            } else {
+                this.classList.add("img-scale");
+            }
+        });
+    </script>
 
 
 </div>		
