@@ -379,7 +379,20 @@ iframe#unpaywall[src$="unpaywall.html"] {
 					</div>
     
 
-
+                    <img id="image" src="" alt="" />
+                    <script>
+                      const thumbnailUrl = "map-large.png";
+                      const wideImageUrl = "map-large.png";
+                
+                      const image = document.getElementById("image");
+                      image.src = thumbnailUrl;
+                      let isThumbnail = true;
+                
+                      image.addEventListener("click", () => {
+                        image.src = isThumbnail ? wideImageUrl : thumbnailUrl;
+                        isThumbnail = !isThumbnail;
+                      });
+                    </script>
 
 		</section>
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-2744c18 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2744c18" data-element_type="section">
