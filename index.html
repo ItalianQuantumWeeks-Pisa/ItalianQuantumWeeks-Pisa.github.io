@@ -311,9 +311,14 @@ iframe#unpaywall[src$="unpaywall.html"] {
   -webkit-transform: scale(2.5); /* Safari and Chrome */
     -o-transform: scale(2.5); /* Opera */
     -moz-transform: scale(2.5); /* Firefox */
-
+    width: 250%; /* Make the image fill the container */
+    max-width: 250%; /* Ensure the image doesn't exceed its original size */
 
 }
+.image-container {
+    overflow-x: auto; /* Add horizontal scrollbar when necessary */
+  }
+
 </style>
 
 <link rel="https://api.w.org/" href="https://quantumweeks.it/wp-json/"><link rel="alternate" type="application/json" href="https://quantumweeks.it/wp-json/wp/v2/pages/4413"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://quantumweeks.it/xmlrpc.php?rsd">
@@ -384,9 +389,9 @@ o clicca sulla mappa per ingrandirla!
                     
 </div>
 
-    
+<div class="image-container"> 
        <figure>
-    <img id="imgg" fetchpriority="high" decoding="async" src="map-large.png" ></figure>
+    <img id="imgg" fetchpriority="high" decoding="async" src="map-large.png" ></figure>  </div>
 
 
     <script>
@@ -395,9 +400,15 @@ o clicca sulla mappa per ingrandirla!
                 this.classList.remove("img-scale");
             } else {
                 this.classList.add("img-scale");
+                // add horzional scrollbar
+                document
+                
+
+
             }
         });
     </script>
+        
 
 
 </div>		
