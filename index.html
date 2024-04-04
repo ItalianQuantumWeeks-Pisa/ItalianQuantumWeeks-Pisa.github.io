@@ -315,8 +315,28 @@ iframe#unpaywall[src$="unpaywall.html"] {
     max-width: 250%; /* Ensure the image doesn't exceed its original size */
 
 }
+
+.img-descale {
+    color: #424242; 
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(1);
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari and Chrome */
+    -o-transform: scale(1); /* Opera */
+    -moz-transform: scale(1); /* Firefox */
+    width: 250%; /* Make the image fill the container */
+    max-width: 250%; /* Ensure the image doesn't exceed its original size */
+
+
+}
+
 .image-container {
-    overflow-x: auto; /* Add horizontal scrollbar when necessary */
+    overflow-x: auto;
     height: max-content;
   }
 
@@ -378,36 +398,60 @@ iframe#unpaywall[src$="unpaywall.html"] {
                     <div class="elementor-image-box-content"><h3 class="elementor-image-box-title" style="text-align:center">Mappa Interattiva</h3><p class="elementor-image-box-description" style="text-align:center">Il percorso della mostra è pensato per accompagnare visitatori e visitatrici attraverso le stranezze della meccanica quantistica. La mostra è divisa in tre aree tematiche ed offre anche un'installazione interattiva: la Quantum Jungle!</p>
                     
                     
-                        <p class="elementor-image-box-description" style="text-align:center">Clicca qui per scoprire di più: </br></br>
+                        <p class="elementor-image-box-description" style="text-align:center">Esplora le varie aree tematiche: </br></br>
                         <a href="" class="elementor-image-box-link"><i><u>Meccanica Quantistica</i></u></a> </br>
                         <a href="" class="elementor-image-box-link"><i><u>L'Entanglement</i></u></a> </br>
                         <a href="" class="elementor-image-box-link"><i><u>Tecnologie Quantistiche</i></u></a> </br>
                         <a href="" class="elementor-image-box-link"><i><u>Quantum Jungle</i></u></a></br></br>
                     
-o clicca sulla mappa per ingrandirla!
+
+
+o <a href="javascript:enlarge()" class="elementor-image-box-link"><i><u>clicca sulla mappa per ingrandirla!</i></u></a> </p>
 
                     </p>
+                    <script>
+                        function enlarge() {
+                            document.getElementById('imgg').click();
+                        }
+
+        function scaleimg(img) {
+            if (img.classList.contains("img-descale")) {
+                img.classList.remove("img-descale");
+                }
+                img.classList.add("img-scale");
+                // wait
+                setTimeout(() => {
+                }, 3000);
+            }
+        function descale(img) {
+            if (img.classList.contains("img-scale")) {
+                img.classList.remove("img-scale");
+                }
+                img.classList.add("img-descale");
+                // wait
+                setTimeout(() => {
+                }, 3000);
+            }
+    </script>
                     
+
 </div>
 
 <div class="image-container"> 
        <figure>
-    <img id="imgg" fetchpriority="high" decoding="async" src="map-large.png" ></figure>  </div>
+    <img id="imgg" fetchpriority="high" decoding="async" src="map-large.png" onmouseover="scaleimg(this)", onmouseleave="descale(this)"
+    
+    
+    ></figure>  </div>
 
 
     <script>
         document.getElementById("imgg").addEventListener("click", function() {
             if (this.classList.contains("img-scale")) {
-                this.classList.remove("img-scale");
+                descale(this);
             } else {
-                this.classList.add("img-scale");
-                // add horzional scrollbar
-                document
-                
-
-
-            }
-        });
+                scaleimg(this);
+        }});
     </script>
         
 
